@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "flightcraft",
+	"version": "${version}",
+	"name": "FlightCraft",
+	"description": "FlightCraft mod from Obabok",
+	"authors": [
+		"Obabok"
+	],
+	"contact": {
+		"homepage": "https://vk.com/alexresh77"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/flightcraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ru.mcflightcraft.FlightCraftMain"
+		]
+	},
+	"mixins": [
+		"flightcraft.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.20",
+		"minecraft": "~1.20.1",
+		"java": ">=17"
+	}
+}
