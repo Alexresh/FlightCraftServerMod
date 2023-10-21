@@ -25,11 +25,10 @@ public class TransferCommand {
     private static int runSpawn(CommandContext<ServerCommandSource> serverCommandSourceCommandContext) throws CommandSyntaxException {
         ServerPlayerEntity serverPlayer = serverCommandSourceCommandContext.getSource().getPlayerOrThrow();
         ServerWorld serverWorld = serverCommandSourceCommandContext.getSource().getWorld().getServer().getOverworld();
-        serverPlayer.teleport(serverWorld, serverWorld.getSpawnPos().getX(), serverWorld.getTopY(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, serverWorld.getSpawnPos().getX(), serverWorld.getSpawnPos().getZ()) , serverWorld.getSpawnPos().getZ(), 0, 0);
+        serverPlayer.teleport(serverWorld, serverWorld.getSpawnPos().getX(), serverWorld.getTopY(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, serverWorld.getSpawnPos().getX(), serverWorld.getSpawnPos().getZ()), serverWorld.getSpawnPos().getZ(), 0, 0);
         serverPlayer.sendMessage(Text.literal("Teleported to spawn"));
         return 1;
     }
-
     private static int runBed(CommandContext<ServerCommandSource> serverCommandSourceCommandContext) throws CommandSyntaxException {
         ServerPlayerEntity serverPlayer = serverCommandSourceCommandContext.getSource().getPlayerOrThrow();
         ServerWorld overworld = serverCommandSourceCommandContext.getSource().getWorld().getServer().getOverworld();

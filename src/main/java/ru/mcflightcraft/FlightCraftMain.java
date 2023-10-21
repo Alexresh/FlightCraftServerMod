@@ -3,12 +3,7 @@ package ru.mcflightcraft;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -17,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.mcflightcraft.command.*;
 
-import java.util.List;
-
 
 public class FlightCraftMain implements ModInitializer {
 
@@ -26,7 +19,7 @@ public class FlightCraftMain implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("flightcraft");
 
 	//public static final
-
+	
 	@Override
 	public void onInitialize() {
 
@@ -53,19 +46,12 @@ public class FlightCraftMain implements ModInitializer {
 	}
 
 	private static void registerCommands(){
-		CommandRegistrationCallback.EVENT.register(AnvilCommand::register);
-		CommandRegistrationCallback.EVENT.register(CraftingTableCommand::register);
-		CommandRegistrationCallback.EVENT.register(GrindstoneCommand::register);
-		CommandRegistrationCallback.EVENT.register(StonecutterCommand::register);
-		CommandRegistrationCallback.EVENT.register(EnderchestCommand::register);
-		CommandRegistrationCallback.EVENT.register(TrashCommand::register);
+		CommandRegistrationCallback.EVENT.register(OpenCommand::register);
 
 		CommandRegistrationCallback.EVENT.register(FlyCommand::register);
 		CommandRegistrationCallback.EVENT.register(GodCommand::register);
 		CommandRegistrationCallback.EVENT.register(TransferCommand::register);
 		CommandRegistrationCallback.EVENT.register(GetIpCommand::register);
-
-
 
 	}
 }
